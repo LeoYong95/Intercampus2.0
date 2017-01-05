@@ -10,14 +10,17 @@ Auth: Leo Yong
 
  #include "Receiver.h"
  #include "Param.h"
+ #include "Shooting.h"
 
  
 Channel *ch1;
 Channel *ch2;
 Channel *ch5;
+Channel *ch6;
 Motor_Control *m;
+Shooting *sh;
 
-unsigned long sigIn1,sigIn2,sigIn5,previousMillis;
+unsigned long sigIn1,sigIn2,sigIn5,sigIn6,previousMillis;
 
 
 void setup() {
@@ -25,7 +28,9 @@ void setup() {
   ch1 = new Channel(RECCHANNEL1);
   ch2 = new Channel(RECCHANNEL2);
   ch5 = new Channel(RECCHANNEL5);
+  ch6 = new Channel(RECCHANNEL6);
   m = new Motor_Control(MOTOR1PWMPIN,MOTOR1DIRPIN, MOTOR2PWMPIN,MOTOR2DIRPIN);
+  sh = new Shooting(ESCPIN, RELAYPIN, SERVOPIN);
   
 
   OCR0A = 0xAF;
@@ -40,9 +45,12 @@ if (currentMillis -previousMillis == updateInterval) {
  sigIn1 = ch1->sigRead();
  sigIn2 = ch2->sigRead();
  sigIn5 = ch5->sigRead();
- 
- 
+ sigIn6 = ch6->sigRead();
+     
+ Serial.println(sigIn6);
+
  m->pwmMixing(sigIn1,sigIn2,sigIn5);
+ sh->Shooting_Initiate(sigIn6);
  
  previousMillis = currentMillis;
 }

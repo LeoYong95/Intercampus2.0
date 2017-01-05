@@ -107,8 +107,8 @@ void pwmMixing (int pwm1, int pwm2, int pwm5) {              //pwm1 will be the 
     
   }*/
 
-    Serial.println(pwmOut1);                     //DEBUGGING
-    Serial.println(pwmOut2);
+    //Serial.println(pwmOut1);                     //DEBUGGING
+    //Serial.println(pwmOut2);
     
    if (pwmOut2 > 0 ) {
       dir2 = 0;
