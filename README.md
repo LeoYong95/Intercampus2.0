@@ -1,3 +1,5 @@
-# Combat_Robot_MyMRC2016
+# Intercampus_2.0_2017
 
-code for controling a robot through receiver.
+code for controlling a robot throuugh two motor driver with pwm and direction.
+This code also control the ping pong ball shooting mechanism mounted on it
+
