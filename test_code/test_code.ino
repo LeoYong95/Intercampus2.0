@@ -30,7 +30,7 @@ void setup() {
   ch5 = new Channel(RECCHANNEL5);
   ch6 = new Channel(RECCHANNEL6);
   m = new Motor_Control(MOTOR1PWMPIN,MOTOR1DIRPIN, MOTOR2PWMPIN,MOTOR2DIRPIN);
-  sh = new Shooting(ESCPIN, RELAYPIN, SERVOPIN);
+  sh = new Shooting(RELAYPIN, SERVOPIN);
   
 
   OCR0A = 0xAF;
@@ -49,7 +49,9 @@ if (currentMillis -previousMillis == updateInterval) {
      
  Serial.println(sigIn6);
 
- m->pwmMixing(sigIn1,sigIn2,sigIn5);
+ //m->pwmMixing(sigIn1,sigIn2,sigIn5);
+ m->pwmMixingTest(sigIn1,sigIn2,sigIn5);
+
  sh->Shooting_Initiate(sigIn6);
  
  previousMillis = currentMillis;

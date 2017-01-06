@@ -1,5 +1,5 @@
 //Auth: Leo Yong
-//the parameters of the robot
+//the list of parameters of the robot
  
  #define updateInterval  100
 
@@ -15,12 +15,14 @@
  #define MOTOR2PWMPIN  5
  #define MOTOR1DIRPIN  2
  #define MOTOR2DIRPIN  4
+ 
 
-//Shooting Pin Out
-#define ESCPIN 10  
+//Shooting Pin Out 
 #define RELAYPIN 11
 #define SERVOPIN 12
 
 //Other Param
+#define EROSIG 10
 #define SRVSTOP 75
-
+#define MTRLIM 180
+#define PWMCONST 0.8
