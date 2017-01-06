@@ -22,4 +22,5 @@
 #define SERVOPIN 12
 
 //Other Param
-#define SRVSTOP 74
+#define SRVSTOP 75
+
